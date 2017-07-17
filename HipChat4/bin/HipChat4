@@ -1,0 +1,66 @@
+#!/bin/bash
+
+commandtorun=''
+arguments=$@
+if [[ "$1" = "--gdb" ]]
+    then commandtorun="gdb"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--ldd" ]]
+    then commandtorun="ldd"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--callgrind" ]]
+    then commandtorun="valgrind --tool=callgrind"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--valgrind" ]]
+    then commandtorun="valgrind --error-limit=no"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--qmldebug" ]]
+    then arguments="$@ -qmljsdebugger=port:60111,block"
+fi;
+
+if [[ "$1" = "--gammaray" ]]
+    then commandtorun="/home/ian/srcs/debian6-amd64/usr/bin/gammaray"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--mock-web" ]]
+    then commandtorun=""
+    arguments='--mock-webcore'
+    echo running command
+fi;
+
+export HIPCHAT_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export HIPCHAT_QT_PLUGIN_PATH=$QT_PLUGIN_PATH
+unset QT_PLUGIN_PATH
+
+thisfile="`readlink -f "$0"`"
+thisdirectory="`dirname "$thisfile"`"
+hipchatRoot=$thisdirectory/../
+
+#hellocpp needs G++ 4.8.0
+#use HipChat-distributed libstdc++ only if needed; using a version older than system causes problems
+$thisdirectory/hellocpp
+if [[ $? = 0 ]]
+    then export LD_LIBRARY_PATH=$hipchatRoot/lib
+else
+    export LD_LIBRARY_PATH="$hipchatRoot/lib;$hipchatRoot/lib/cpp"
+fi
+
+export QT_XKB_CONFIG_ROOT=/usr/share/X11/xkb
+export QTWEBENGINEPROCESS_PATH=$hipchatRoot/bin/QtWebEngineProcess
+export QTWEBENGINE_REMOTE_DEBUGGING=12345
+
+exec -a "$0" $commandtorun "$hipchatRoot/lib/HipChat.bin"  $arguments

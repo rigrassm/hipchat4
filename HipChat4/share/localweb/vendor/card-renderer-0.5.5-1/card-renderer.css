@@ -1,0 +1,232 @@
+body {
+  background: none;
+}
+.atlascard {
+  font: normal 14px/1.5em Arial, sans-serif;
+  background: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #ccc;
+  max-width: 740px;
+  max-height: 195px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+.atlascard:hover .feedback {
+  display: block;
+}
+.atlascard p {
+  margin: 1em 0;
+}
+.atlascard a {
+  color: #333;
+  text-decoration: none;
+}
+.atlascard a:hover {
+  text-decoration: underline;
+}
+.atlascard .thumbnail {
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 300px;
+}
+.atlascard .thumbnail .thumbnail-wrapper {
+  width: 100%;
+  height: 169px;
+  overflow: hidden;
+}
+.atlascard .thumbnail .thumbnail-wrapper img {
+  width: 302px;
+  height: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.atlascard .thumbnail .thumbnail-wrapper img.wide {
+  width: auto;
+  height: 171px;
+}
+.no-thumbnail.atlascard .thumbnail {
+  display: none;
+}
+.atlascard .meta {
+  padding: 13px 20px;
+  max-height: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.atlascard .meta .title-wrapper .favicon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.atlascard .meta .title-wrapper .title-group {
+  display: inline-block;
+  max-width: calc(100% - 42px);
+  margin: 0;
+  vertical-align: middle;
+}
+.atlascard .meta .title-wrapper .title {
+  display: block;
+  line-height: 1.2em;
+  font-size: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  max-height: 2.4em;
+  font-weight: bold;
+}
+.atlascard .meta .title-wrapper .title.nofavicon {
+  margin-left: 0 !important;
+}
+.atlascard .meta .title-wrapper .subtitle {
+  display: block;
+  font-size: 12px;
+  color: #707070;
+  margin-top: -4px;
+  overflow: hidden;
+}
+.atlascard .meta .date {
+  font-size: 12px;
+  line-height: 14px;
+  margin: 10px 0 10px 0;
+}
+.atlascard .meta .arrow {
+  background: url('arrow-down.svg') no-repeat 50% 50%;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 12px;
+  height: 12px;
+  margin: 12px 0;
+  text-indent: -999px;
+  float: right;
+}
+.atlascard .meta .description {
+  white-space: pre-line;
+  margin: 10px 0 0 0;
+  display: block;
+  /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 100%;
+  max-height: 90px;
+  /* Fallback for non-webkit */
+  font-size: 14px;
+  line-height: 1.28571429;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.atlascard .feedback {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0 5px;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-top-left-radius: 3px;
+  background: #fff;
+  display: none;
+}
+.atlascard .feedback a {
+  color: #3572b0;
+  font-size: smaller;
+}
+.atlascard.compact .thumbnail {
+  width: 195px;
+}
+.atlascard.compact .thumbnail .thumbnail-wrapper {
+  height: 110px;
+}
+.atlascard.compact .thumbnail .thumbnail-wrapper img {
+  width: 197px;
+}
+.atlascard.compact .thumbnail .thumbnail-wrapper img.wide {
+  width: auto;
+  height: 112px;
+}
+.atlascard.compact .meta .description {
+  max-height: 36px;
+  /* Fallback for non-webkit */
+  -webkit-line-clamp: 2;
+}
+.atlascard.narrow {
+  width: 300px;
+  max-height: none;
+}
+.atlascard.narrow .thumbnail {
+  width: 100%;
+  float: none;
+}
+.atlascard.narrow .meta {
+  padding-left: 20px;
+  max-height: none;
+  overflow: auto;
+}
+.atlascard.narrow .meta .title {
+  line-height: 18px;
+}
+.atlascard.narrow.collapsed .meta {
+  margin-bottom: 5px;
+}
+.atlascard.narrow.collapsed .meta .description {
+  display: none;
+}
+.atlascard.narrow.nofavicon .meta .title-wrapper .title {
+  margin-left: 0;
+}
+.atlascard.small {
+  border-radius: 0;
+  width: 195px;
+  max-height: none;
+  overflow: auto;
+}
+.atlascard.small .thumbnail {
+  width: 100%;
+}
+.atlascard.small .thumbnail .thumbnail-wrapper {
+  height: 110px;
+  overflow: hidden;
+}
+.atlascard.small .thumbnail .thumbnail-wrapper img {
+  width: 197px;
+}
+.atlascard.small .thumbnail .thumbnail-wrapper img.wide {
+  width: auto;
+  height: 112px;
+}
+.atlascard.small .meta {
+  padding: 12px;
+  max-height: none;
+  overflow: auto;
+}
+.atlascard.small .meta .favicon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+.atlascard.small .meta .title-group {
+  max-width: calc(100% - 30px);
+}
+.atlascard.small .meta .title {
+  font-size: 14px;
+  line-height: 16px;
+}
+.atlascard.small .meta .date {
+  margin: 8px 0;
+}
+.atlascard.small .meta .description {
+  margin: 5px 0;
+}

@@ -1,0 +1,17 @@
+/* Hide UI that doesn't work */
+#btn-share-screen, #feedback {
+   display: none;
+}
+/* Accommodate some rendered layout differences */
+#aui-settings-dialog {
+  width: 340px !important;
+  height: 270px !important;
+  background-color: #fff !important;
+}
+/* Test sound is downloaded by adl, but fails in this distro so hide it */
+.select-subcontrols.audio-output-controls {
+  display: none !important;
+}
+.dialog-panel-body: {
+  overflow: hidden;
+}

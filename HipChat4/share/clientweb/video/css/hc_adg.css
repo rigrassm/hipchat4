@@ -1,0 +1,274 @@
+hr {
+    border:0;
+    border-bottom:1px solid #ddd;
+}
+.aui-page-panel.aui-page-header {
+    border-top:0;
+}
+.main-content {
+    width:80%;
+}
+.sidebar-right {
+    width:20%;
+}
+table.aui th.right, table.aui td.right {
+    text-align:right;
+}
+.small-avatar-col {
+    width: 35px;
+}
+.name-after-avatar {
+    vertical-align: top;
+    display: inline-block;
+    margin-left: 5px;
+}
+.social-links li img {
+    height: 22px;
+    max-width: none;
+    width: 22px
+}
+#footer .footer-body {
+    width:100% !important;
+    box-sizing: border-box;
+}
+#footer .footer-body>ul.social-links>li:after {
+    content: "";
+    margin-left: 10px;
+}
+.aui-page-sidebar #footer {
+    padding-left: 0;
+}
+blockquote.code {
+    font-family: Menlo, monospace;
+    color: #000;
+    border:1px solid #ddd;
+    border-radius: 5px;
+    background: #f5f5f5;
+    margin-left: 0;
+}
+.aui-page-panel-content.signin>form.aui>.buttons-container {
+    border-top:0 !important;
+    margin-top:0;
+    padding-top: 4px;
+}
+.aui-page-focused .aui-page-panel {
+    margin-top: 50px;
+}
+.flash {
+    padding:20px;
+    box-sizing: border-box;
+}
+.content-box {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 10px 0 20px 0;
+    padding: 20px;
+    background-color:#f5f5f5;
+}
+
+.download-screenshot {
+    border:1px solid #ccc;
+    margin-right:20px;
+}
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+.aui-page-header .aui-page-header-image .aui-avatar.aui-avatar-xlarge.aui-avatar-project:before {
+    border:0;
+}
+.aui-page-header .aui-page-header-image .aui-avatar.aui-avatar-xlarge.aui-avatar-project {
+    box-shadow:none;
+}
+.hipchat-icon-extra-huge:after {
+    color: #707070;
+    font-size: 66px !important;
+    margin-top: -33px !important;
+}
+textarea.json {
+    font-size: 11px;
+    font-family: monospace;
+    width: 100%;
+    height: 200px;
+}
+
+
+.aui-dropdown2-section li a.aui-button.aui-button-link {
+    border-radius: 0;
+}
+.participants .hipchat-icon-xsmall {
+    margin-right:5px;
+    margin-top:1px;
+}
+form.aui.inline-edit {
+    margin:0;
+}
+form.aui span.subdomain {
+    margin-left: -21px;
+}
+form.aui.top-label .field-group.full-width {
+    white-space: nowrap;
+}
+.editable {
+    cursor: pointer;
+}
+.card_icon{
+    vertical-align:bottom;
+    margin-bottom:1px;
+}
+table.aui td>a.aui-button-link {
+    padding: 0;
+}
+.download_badge {
+    text-decoration: none;
+}
+
+.download_badge .content-box {
+    height:42px;
+    width:160px;
+    padding:5px;
+    margin-right:10px;
+    float:left;
+}
+
+.download_badge .content-box img{
+    height:50px;
+    float:left;
+    padding:0px;
+}
+
+.download_badge .content-box div {
+    float:left;
+    margin-top:4px;
+    margin-left:5px;
+}
+
+.download_badge .content-box div p.get_it_for {
+    text-transform:uppercase;
+    font-size:10px;
+    color:#999;
+    font-weight:bold;
+    margin:0px;
+    line-height:1.4em;
+}
+
+.download_badge .content-box div p.os {
+    font-size:24px;
+    color:#999;
+    font-weight:normal;
+    margin:0px;
+    line-height:1em;
+}
+
+ul.social {
+    margin:10px 0 0 0 ;
+    padding:0px;
+}
+
+ul.social li {
+    list-style:none;
+    display: inline;
+    padding-right:10px;
+}
+ul.social img {
+    height:30px;
+}
+.photo_grid div {
+    float:left;
+}
+.photo_grid .card {
+    border-radius:5px;
+    text-align:center;
+    max-width:118px;
+    margin: 5px;
+    padding:10px;
+    width:118px;
+    height: 150px;
+    max-height:150px;
+}
+.photo_grid .card p {
+    font-size:12px;
+    margin:3px 0 0 0;
+    line-height:12px;
+}
+.photo_grid .card img {
+    border:1px solid #ccc;
+}
+.aui-lozenge.doc-version {
+    position: relative;
+    top: -4px;
+}
+p.pagination a, p.pagination strong {
+    margin-right: 15px;
+}
+
+.notdefault_warning {
+    display: none;
+}
+table.features tr.notdefault_off .notdefault_warning,
+table.features tr.notdefault_on .notdefault_warning {
+    display: block;
+    color: #FF7771;
+    font-size: 10px;
+    margin:5px 0;
+}
+
+.header-link {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  margin: 0;
+  padding: 4px 10px;
+}
+
+/****************** Emoticons page *****************/
+.emoticon-block {
+    display: inline-block;
+    border: 1px solid white;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    width: 100px;
+    height: 70px;
+    text-align: center;
+    margin: 5px;
+    padding: 10px;
+}
+.emoticon-block-hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+.emoticon-block div {
+    font-size: 12px;
+}
+
+.home-mobile a.aui-button {
+    width:200px;
+}
+
+/****** AID finish page ******/
+.aid-finish .subdomain-group {
+    display: table;
+    position: relative;
+    width: 100%;
+}
+
+.aid-finish .subdomain-field,
+.aid-finish .subdomain {
+    display: table-cell;
+}
+
+.aid-finish .subdomain {
+    width: 1%;
+    line-height: 2.1428;
+    padding-left: 10px;
+}
+
+.aid-finish form.aui .subdomain {
+    margin-left: 0;
+}
+
+.aid-finish form.aui .subdomain-field + .aui-icon-notification {
+    position: absolute;
+    right: 0;
+    visibility: hidden;
+}

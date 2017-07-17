@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../../login.css" type="text/css"/>
+  </head>
+  <body>
+    <section>
+      <a class="hipchat-logo"></a>
+      <div class="card" id="login-prompt">
+        <h2>Log in to HipChat</h2>
+        <div class="empty-avatar"></div>
+        <form id="login-form">    
+          <div class="field-group">
+            <input type="email" id="email-input" name="email-input" value="" class="text-input full-width-field" placeholder="Email" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+          <input type="submit" id="login-submit" name="login-submit" value="Next" class="aui-button aui-button-primary" formnovalidate class="submit aui-button aui-button-primary" />
+        </form>
+        <div class="line"></div>
+        <a href="#" id="select-server">Log in to your team's HipChat Server</a>
+      </div>
+      <div class="card" id="server-prompt">
+        <h2>Log in to HipChat</h2>
+        <a class="back" href="#" id="select-login"></a>
+        <p>Enter your team's server domain to continue.</p>
+        <form id="domain-form">    
+          <div class="field-group">
+            <input type="text" id="domain-input" name="domain-input" value="" class="text-input full-width-field" placeholder="myteam.domain.com" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+          </div>
+          <input type="submit" id="domain-submit" name="domain-submit" value="Next" class="aui-button aui-button-primary" formnovalidate class="submit aui-button aui-button-primary" />
+        </form>
+      </div>
+    </section>
+
+    <!--- For Mac Client (will 404 and cause no problems on QT )--->
+    <script src="../../mac-bridge.js"></script>
+    <script src="../../login-spi.js"></script>
+
+    <!--- For QT Client (will 404 and cause no problems on Mac )--->
+    <script src="../../../clientweb/qwebchannel.js"></script>
+    <script src="../../../clientweb/login_spi.js"></script>
+
+    <!--- Both of those ^^^ provide a "window.spi" object which is used by this vvv --->
+    <script src="login_main.js"></script>
+  </body>
+</html>

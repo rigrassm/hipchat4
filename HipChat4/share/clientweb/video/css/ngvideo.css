@@ -1,0 +1,758 @@
+html,
+body {
+  background: #222222;
+  overflow: hidden;
+}
+.block {
+  text-align: center;
+}
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+}
+a {
+  color: #3b73af !important;
+}
+#main-controls {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+}
+#main-controls-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0 20px;
+  display: inline-block;
+  height: 45px;
+  border-radius: 5px;
+}
+#main-controls button {
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  padding: 0 8px;
+  width: 41px;
+  height: 45px;
+  background-image: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+}
+#main-controls button .btn-icon {
+  display: inline-block;
+  vertical-align: bottom;
+  width: 25px;
+  height: 45px;
+}
+#main-controls button:focus {
+  outline: none;
+}
+#main-controls button:disabled {
+  background-color: transparent;
+}
+#btn-share-screen .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -660px;
+}
+#btn-share-screen:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -705px;
+}
+#btn-share-screen.active:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -795px;
+}
+#btn-share-screen.active:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -840px;
+}
+#btn-share-screen:disabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -750px;
+}
+#btn-publish-video .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -480px;
+}
+#btn-publish-video:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1425px;
+}
+#btn-publish-video.active:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1470px;
+}
+#btn-publish-video.active:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1515px;
+}
+#btn-publish-video:disabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1380px;
+}
+#btn-publish-audio .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1335px;
+}
+#btn-publish-audio:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -930px;
+}
+#btn-publish-audio.active:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1155px;
+}
+#btn-publish-audio.active:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1245px;
+}
+#btn-publish-audio:disabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -885px;
+}
+#btn-settings .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -525px;
+}
+#btn-settings:hover:enabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -615px;
+}
+#btn-settings:disabled .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -570px;
+}
+#btn-full-screen .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -975px;
+}
+#btn-full-screen:hover .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1020px;
+}
+#btn-full-screen.active .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1065px;
+}
+#btn-full-screen.active:hover .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1110px;
+}
+#btn-hang-up .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -390px;
+}
+#btn-hang-up:hover .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -435px;
+}
+#btn-hang-up.active .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -390px;
+}
+#btn-hang-up.active:hover .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -435px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  #btn-share-screen .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -720px;
+  }
+  #btn-share-screen:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -765px;
+  }
+  #btn-share-screen.active:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -855px;
+  }
+  #btn-share-screen.active:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -900px;
+  }
+  #btn-share-screen:disabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -810px;
+  }
+  #btn-publish-video .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -945px;
+  }
+  #btn-publish-video:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1350px;
+  }
+  #btn-publish-video.active:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1395px;
+  }
+  #btn-publish-video.active:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1440px;
+  }
+  #btn-publish-video:disabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1305px;
+  }
+  #btn-publish-audio .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -495px;
+  }
+  #btn-publish-audio:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1035px;
+  }
+  #btn-publish-audio.active:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -360px;
+  }
+  #btn-publish-audio.active:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -405px;
+  }
+  #btn-publish-audio:disabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -990px;
+  }
+  #btn-settings .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -585px;
+  }
+  #btn-settings:hover:enabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -675px;
+  }
+  #btn-settings:disabled .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -630px;
+  }
+  #btn-full-screen .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1080px;
+  }
+  #btn-full-screen:hover .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1125px;
+  }
+  #btn-full-screen.active .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1170px;
+  }
+  #btn-full-screen.active:hover .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -315px;
+  }
+  #btn-hang-up .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -450px;
+  }
+  #btn-hang-up:hover .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1485px;
+  }
+  #btn-hang-up.active .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -450px;
+  }
+  #btn-hang-up.active:hover .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1485px;
+  }
+}
+#main {
+  overflow: hidden;
+}
+#main-container {
+  position: relative;
+  overflow: hidden;
+  background: #333333;
+}
+#tiles {
+  z-index: 1100;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+#tiles > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#tiles > ul > li {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1px;
+  margin: 0;
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: bottom;
+  overflow: hidden;
+}
+#tiles .tile-content {
+  position: relative;
+}
+#tiles .renderer-sink,
+#tiles .tile-content,
+#tiles .loading .spinner {
+  width: 125px;
+  height: 94px;
+  display: inline-block;
+  vertical-align: bottom;
+  background-color: #333333;
+}
+#tiles .loading {
+  position: relative;
+}
+#tiles .loading .spinner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+#tiles .label {
+  color: #fff;
+  padding: 2px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#tiles .local-audio-indicator {
+  position: absolute;
+  left: 18px;
+  bottom: 0;
+  width: 28px;
+  height: 45px;
+}
+#tiles .local-audio-indicator {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1200px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  #tiles .local-audio-indicator {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1215px;
+  }
+}
+#status {
+  position: absolute;
+  z-index: 1050;
+  background: #333333;
+}
+.status-panel {
+  width: 300px;
+}
+.status-panel h2 {
+  font-size: 14px;
+  margin: 20px 0;
+  padding: 0;
+  color: #cccccc;
+}
+.status-panel h3 {
+  font-size: 12px;
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #999999;
+}
+#status-wait-indicator {
+  margin: 20px 0;
+}
+button.call-back .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -172px;
+}
+button.close .btn-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -204px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  button.call-back .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -195px;
+  }
+  button.close .btn-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -147px;
+  }
+}
+#main-indicators ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  left: 20px;
+  bottom: 6px;
+  z-index: 1070;
+}
+#main-indicators ul > li {
+  margin: 0 5px 0 0;
+  padding: 0;
+  width: 28px;
+  height: 45px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#main-audio-indicator {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -1200px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  #main-audio-indicator {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -1215px;
+  }
+}
+#main-renderer {
+  position: absolute;
+}
+#main-renderer-sink {
+  position: absolute;
+  z-index: 1000;
+}
+#main-video-billboard {
+  position: absolute;
+  z-index: 1050;
+  background-color: #333333;
+}
+#main-video-billboard .label {
+  padding: 4px;
+  font-size: 14px;
+  color: #cccccc;
+}
+#main-screen-sink {
+  position: absolute;
+  z-index: 1060;
+}
+@media screen and (max-width: 568px) and (max-height: 320px), screen and (max-width: 320px) {
+  #main-video-tile {
+    display: none !important;
+  }
+}
+#local-avatar-tile .tile-content {
+  background-size: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 568px) and (max-height: 320px), screen and (max-width: 320px) {
+  #local-avatar-tile {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 568px) and (max-height: 320px), screen and (max-width: 320px) {
+  #local-video-tile {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 568px) and (max-height: 320px), screen and (max-width: 320px) {
+  #local-screen-tile {
+    display: none !important;
+  }
+}
+#share-screen-dialog {
+  text-align: center;
+}
+#share-screen-dialog .loading .spinner {
+  left: 50%;
+  top: 50%;
+}
+#share-screen-dialog ul.sources {
+  padding: 5px 0;
+  list-style-type: none;
+  margin: 0;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#share-screen-dialog ul.sources > li {
+  padding: 0;
+  margin: 5px;
+  display: inline-block;
+  vertical-align: bottom;
+}
+#share-screen-dialog ul.sources > li > a {
+  display: block;
+  padding: 5px;
+  margin: 0;
+  border-radius: 3.0001px;
+  background: #f5f5f5;
+  border: 2px solid #e1e1e1;
+  text-decoration: none;
+}
+#share-screen-dialog ul.sources > li > a:hover,
+#share-screen-dialog ul.sources > li > a.selected {
+  border: 2px solid #3372b2;
+  background: #ccd9eb;
+}
+#share-screen-dialog ul.sources > li > a > .label {
+  padding: 5px;
+  margin: 0;
+  width: 240px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  color: #313949;
+}
+#settings-dialog form.aui {
+  margin: 20px 0 0 0;
+}
+#settings-dialog form.aui .field-group {
+  padding: 4px 0 4px 115px;
+}
+#settings-dialog form.aui .field-group > label {
+  margin-left: -115px;
+  width: 100px;
+}
+#settings-dialog h1 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  border: none;
+}
+#settings-dialog p {
+  margin: 10px 0 20px 0;
+  padding: 0;
+  border: none;
+  color: #888888;
+}
+#settings-dialog form.aui .field-group {
+  padding: 0 5px;
+}
+#settings-dialog form.aui .field-group .field-icon,
+#settings-dialog form.aui .field-group .field-spacer {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 20px;
+}
+#settings-dialog form.aui .field-group .field-icon {
+  height: 24px;
+}
+#settings-dialog form.aui select {
+  margin: 0;
+}
+#settings-dialog form.aui .field-group > select,
+#settings-dialog form.aui .field-group > a {
+  display: inline-block;
+  vertical-align: middle;
+}
+#settings-dialog .loading {
+  height: 160px;
+}
+#settings-dialog .loading .spinner {
+  left: 50%;
+  top: 50%;
+}
+#settings-dialog .select-subcontrols {
+  margin-bottom: 0;
+  margin-left: 5px;
+  vertical-align: top;
+}
+#settings-dialog .select-subcontrols.video-capture-controls {
+  margin-top: 15px;
+  height: 0;
+}
+#settings-dialog .select-subcontrols.audio-capture-controls {
+  height: 2px;
+  display: inline-block;
+  margin-top: 5px;
+}
+#settings-dialog .select-subcontrols.audio-capture-controls .switch-when {
+  margin: 0;
+  height: 2px;
+}
+#settings-dialog .select-subcontrols.audio-output-controls {
+  margin-top: 5px;
+  height: 20px;
+  display: inline-block;
+}
+#settings-dialog .select-subcontrols.audio-output-controls a {
+  text-decoration: none;
+}
+#settings-dialog .select-subcontrols.audio-output-controls a:hover {
+  text-decoration: underline;
+}
+#settings-dialog #mic-level-indicator {
+  width: 240px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: top;
+  background: #cccccc;
+  border-radius: 1.5px;
+  overflow: hidden;
+}
+#settings-dialog #mic-level-indicator > .value {
+  width: 0;
+  height: 2px;
+  display: inline-block;
+  vertical-align: top;
+  background: #14892c;
+}
+.video-capture-controls-group .field-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -284px;
+}
+.audio-capture-controls-group .field-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -260px;
+}
+.audio-output-controls-group .field-icon {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -236px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  .video-capture-controls-group .field-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -235px;
+  }
+  .audio-capture-controls-group .field-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -211px;
+  }
+  .audio-output-controls-group .field-icon {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -259px;
+  }
+}
+#feedback {
+  color: #cccccc;
+}
+#feedback h2 {
+  font-size: 14px;
+  margin: 20px 0;
+  padding: 0;
+  color: #cccccc;
+  text-align: center;
+}
+#feedback-detail-form {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1090;
+  background-color: #333333;
+}
+#feedback-detail-form textarea {
+  display: block;
+  margin: auto;
+  width: 320px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+#feedback-rating-form {
+  width: 100%;
+  height: 96px;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  z-index: 1090;
+}
+#feedback-rating-form ul.rating {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  padding: 10px;
+}
+#feedback-rating-form ul.rating li {
+  display: inline-block;
+  padding: 2px;
+}
+#feedback-rating-form ul.rating a.star {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: hand;
+  width: 15px;
+  height: 15px;
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -94px;
+}
+#feedback-rating-form ul.rating a.star.on {
+  background-image: url('img/chat/video/sprites-1x.png');
+  background-size: 32px 1605px;
+  background-position: 0px -109px;
+}
+@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (-moz-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+  #feedback-rating-form ul.rating a.star {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -69px;
+  }
+  #feedback-rating-form ul.rating a.star.on {
+    background-image: url('img/chat/video/sprites-2x.png');
+    background-size: 33px 1530px;
+    background-position: 0px -84px;
+  }
+}

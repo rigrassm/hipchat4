@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Atlassian Cards</title>
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
+      <!-- AUI -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.15/require.min.js"></script>
+      <script src="http://aui-cdn.atlassian.com/aui-adg/5.7.12/js/aui.js"></script>
+      <script src="http://aui-cdn.atlassian.com/aui-adg/5.7.12/js/aui-experimental.js"></script>
+      <script src="http://aui-cdn.atlassian.com/aui-adg/5.7.12/js/aui-datepicker.js"></script>
+      <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/5.8.14/css/aui.css"/>
+      <link rel="stylesheet" type="text/css" href="http://aui-cdn.atlassian.com/aui-adg/5.8.14/css/aui-experimental.css"/>
+      <!-- cardDrawer -->
+      <script src="card-renderer.min.js" type="text/javascript"></script>
+      <link rel="stylesheet" type="text/css" href="card-renderer.min.css">
+      <link rel="stylesheet" type="text/css" href="application-card-renderer.min.css">
+
+      <!-- Main -->
+    <script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function() {
+
+        var options = {
+          "type": "link",
+          "format": "wide",
+          "responsive": false,
+          "borderRadius": false,
+          "borderShadow": false
+        };
+
+        function getParameterByName(name) {
+          name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+          var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+              results = regex.exec(location.search);
+          return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        };
+
+        function loadJS(url, options) {
+          var script = document.createElement('script');
+          script.src = url;
+          if (options) {
+            script.setAttribute('data-options', options);
+          }
+          document.getElementsByTagName("head")[0].appendChild(script);
+        };
+
+        function getBaseUrl() {
+          return getParameterByName('xdm_e') + getParameterByName(
+            'cp'
+          ) + '/atlassian-connect';
+        };
+
+        var format  = getParameterByName('format');
+        var nothumb = getParameterByName('nothumb');
+        var url     = getParameterByName('url');
+        if (!url) {
+          url = 'http://edition.cnn.com/2015/06/03/us/fifa-chuck-blazer-transcript/index.html'
+        }
+
+        // Connect related
+        var connect = getParameterByName('connect');
+        var xdm_e   = getParameterByName('xdm_e');
+        if (xdm_e) {
+          loadJS(getBaseUrl() + '/all.js', 'resize:true;margin:true');
+        }
+        if (connect && ! format) {
+          format = 'wide';
+        }
+
+        var query = [
+          'url=' + url,
+          'group=1',
+          'api_key=2d1565f3b9f5fbd6c21a4b'
+        ];
+
+        //var serviceUrl = 'http://iframe.ly/api/iframely';
+        var serviceUrl = 'https://card-meta.atlassian.io/meta';
+
+        var jsonData = getParameterByName("data");
+        var cardType = getParameterByName("type");
+
+
+        var addCardsToBody = function (data) {
+          var body = document.querySelector('body');
+          var content = document.createElement('div');
+          if (connect) {
+            content.className += 'ac-content';
+          }
+          var card = new CardDrawer(data, options);
+          content.innerHTML = '';
+
+          if (format) {
+            content.innerHTML += card.render({format: format, noThumb: nothumb});
+          } else {
+            content.innerHTML += '<a href=?format=wide>?format=wide</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'wide'});
+            content.innerHTML += '<br><br>';
+            content.innerHTML += '<a href=?format=wide&nothumb=1>?format=wide&amp;nothumb=1</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'wide', noThumb: true});
+            content.innerHTML += '<br><br>';
+            content.innerHTML += '<a href=?format=narrow>?format=narrow</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'narrow'});
+            content.innerHTML += '<br><br>';
+            content.innerHTML += '<a href=?format=narrow&nothumb=1>?format=narrow&amp;nothumb=1</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'narrow', noThumb: true});
+            content.innerHTML += '<br><br>';
+            content.innerHTML += '<a href=?format=small>?format=small</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'small'});
+            content.innerHTML += '<br><br>';
+            content.innerHTML += '<a href=?format=small&nothumb=1>?format=small&amp;nothumb=1</a>';
+            content.innerHTML += '<br><br>';
+            content.innerHTML += card.render({format: 'small', noThumb: true});
+          }
+          body.appendChild(content);
+        };
+
+        if (jsonData) {
+
+            if (cardType){
+                options.type = cardType;
+            }
+
+            try {
+
+                addCardsToBody(JSON.parse(jsonData));
+
+            } catch (err) {
+                console.error(" Error trying to render the card with data: ");
+                console.error(jsonData);
+                console.error(err.message);
+            }
+
+        } else {
+          $.ajax({
+              url: [
+                  serviceUrl,
+                  '?',
+                  query.join('&'),
+              ].join(''),
+              type: 'GET',
+              dataType: 'json',
+              timeout: 6000,
+              success: function (data, textStatus, xhr) {
+                  addCardsToBody(data);
+              },
+              error: function (err) {
+                  addCardsToBody({
+                      url: url,
+                      title: 'Error: Could not parse page',
+                      description: 'Sorry, we were not able to get any meta data from: ' + url
+                  });
+              }
+          });
+        }
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

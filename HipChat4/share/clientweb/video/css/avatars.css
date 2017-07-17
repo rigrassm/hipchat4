@@ -1,0 +1,92 @@
+/* Group Avatars */
+.avatar-dynamic {
+    display: block;
+    border-radius: 100%;
+    color: white;
+    text-align: center;
+}
+
+/* Default Avatars */
+.aui-avatar-xsmall .avatar-dynamic {
+    line-height: 16px;
+    font-size: 10px;
+}
+.aui-avatar-small .avatar-dynamic {
+    line-height: 24px;
+    font-size: 14px;
+}
+.aui-avatar-medium .avatar-dynamic {
+    line-height: 32px;
+    font-size: 20px;
+}
+.aui-avatar-large .avatar-dynamic {
+    line-height: 48px;
+    font-size: 32px;
+}
+.aui-avatar-xlarge .avatar-dynamic {
+    line-height: 64px;
+    font-size: 48px;
+}
+.aui-avatar-xxlarge .avatar-dynamic {
+    line-height: 96px;
+    font-size: 64px;
+}
+
+/* Avatars with images */
+.aui-avatar .avatar-img {
+    background-size: cover;
+    background-position: 50% 50%;
+    display: block;
+}
+.aui-avatar-xsmall .avatar-img {
+    border-radius: 16px;
+    width: 16px;
+    height: 16px;
+}
+.aui-avatar-small .avatar-img {
+    border-radius: 24px;
+    width: 24px;
+    height: 24px;
+}
+.aui-avatar-medium .avatar-img {
+    border-radius: 32px;
+    width: 32px;
+    height: 32px;
+}
+.aui-avatar-large .avatar-img {
+    border-radius: 48px;
+    width: 48px;
+    height: 48px;
+}
+.aui-avatar-xlarge .avatar-img {
+    border-radius: 64px;
+    width: 64px;
+    height: 64px;
+}
+.aui-avatar-xxlarge .avatar-img {
+    border-radius: 96px;
+    width: 96px;
+    height: 96px;
+}
+
+.aui-avatar.aui-avatar-project {
+    box-shadow: 0px 0px 1px #fff;
+}
+.aui-avatar.aui-avatar-project:before {
+    border-color: #fff;
+}
+
+/* Avatars in the aui header */
+.aui-header .aui-nav .aui-avatar-wrap {
+    padding: 8px 5px 0 10px;
+}
+.aui-header .aui-nav .group-name-wrap {
+    padding: 10px 10px 10px 0px;
+}
+.aui-header .aui-nav .aui-avatar.aui-avatar-project {
+    background-color: inherit;
+    box-shadow: none;
+}
+.aui-header .aui-nav .aui-avatar.aui-avatar-project:before {
+    border: none;
+}

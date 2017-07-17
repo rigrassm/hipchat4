@@ -1,0 +1,167 @@
+#server-prompt {
+  display: none;
+}
+
+.server-mode #server-prompt {
+  display: block;
+}
+
+.server-mode #login-prompt {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F5F5F5;
+  color: #707070;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  text-align: center;
+}
+
+a {
+  color: #3572b0;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+a:hover,
+a:focus {
+  color: #205081;
+}
+
+section {
+  padding-top: 60px;
+  padding-bottom: 12px;
+  max-width: 426px;
+  min-width: 240px;
+  width: 100%;
+  display: inline-block;
+}
+
+form {
+  margin: 20px 0 0;
+  position: relative;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type=submit],
+input[type=button] {
+  -webkit-font-smoothing: antialiased;
+  background: #13892C;
+  /* #67ab49; */
+  border: 0;
+  color: #ffffff;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+  height: 44px;
+  width: 100%;
+  text-shadow: none;
+  margin: 0;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+input[type=submit][disabled] {
+  opacity: .5;
+}
+
+.text-input {
+  border: 1px solid #ccc;
+  font-size: inherit;
+  font-family: inherit;
+  width: 100%;
+  border-radius: 4px;
+  height: 42px;
+  padding-left: 10px;
+}
+
+.field-group {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.error .text-input {
+  border-color: #d04437;
+}
+
+.field-group .error-text {
+  margin: 5px 0 0px 0;
+  color: #d04437;
+  font-size: 15px;
+}
+
+.hipchat-logo {
+  display: inline-block;
+  height: 60px;
+  width: 182px;
+  background-image: url("./assets/svgs/native/hipchat_logo.svg");
+  background-repeat: no-repeat;
+  margin-bottom: 20px;
+}
+
+.card {
+  display: block;
+  background: #FFF;
+  padding: 20px;
+  border-radius: 4px;
+  border: 1px solid #EEE;
+  position: relative;
+  text-align: center;
+}
+
+.card .line {
+  border-top: 1px solid #E9E9E9;
+  display: block;
+  margin: 20px -20px 18px -20px;
+}
+
+.card h2:first-child {
+  color: #424242;
+  font-size: 22px;
+  line-height: 32px;
+  margin: -7px 20px 14px 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+  font-weight: bold;
+}
+
+.card .back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 46px;
+  width: 46px;
+  background-size: 16px 16px;
+  background-image: url("./assets/svgs/native/back_arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 20px 20px;
+}
+
+.card p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #838383;
+}
+
+.empty-avatar {
+  height: 100px;
+  width: 100px;
+  border-radius: 50px;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+  background-image: url("./assets/svgs/native/grey_avatar.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,53 @@
+#!/bin/bash
+
+commandtorun=''
+arguments=$@
+if [[ "$1" = "--gdb" ]]
+    then commandtorun="gdb"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--ldd" ]]
+    then commandtorun="ldd"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--callgrind" ]]
+    then commandtorun="valgrind --tool=callgrind"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--valgrind" ]]
+    then commandtorun="valgrind --error-limit=no"
+    arguments=''
+    echo running command
+fi;
+
+if [[ "$1" = "--qmldebug" ]]
+    then arguments="$@ -qmljsdebugger=port:60111,block"
+fi;
+
+echo $1
+
+thisfile="`readlink -f "$0"`"
+thisdirectory="`dirname "$thisfile"`"
+hipchatRoot=$thisdirectory/../
+
+export HIPCHAT_LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+export HIPCHAT_QT_PLUGIN_PATH=$QT_PLUGIN_PATH
+#hellocpp needs G++ 4.8.0
+#use HipChat-distributed libstdc++ only if needed; using a version older than system causes problems
+$hipchatRoot/bin/hellocpp
+if [[ $? = 0 ]]
+    then export LD_LIBRARY_PATH=$hipchatRoot/lib
+else
+    export LD_LIBRARY_PATH="$hipchatRoot/lib:$hipchatRoot/lib/cpp"
+fi
+
+export QT_PLUGIN_PATH=$hipchatRoot/lib/plugins
+
+
+exec -a "$0" $commandtorun "$hipchatRoot/lib/QtWebEngineProcess.bin"  $arguments

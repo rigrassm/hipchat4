@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html id="hc">
+<head>
+  <meta charset="utf-8">
+  <title>HipChat</title>
+  <link rel="stylesheet" href="vendor/aui/5.7.12/css/aui-all.css" media="all">
+  <!--[if IE 9]><link rel="stylesheet" href="vendor/aui/5.7.11/css/aui-ie9.css" media="all"><![endif]-->
+  <!-- build:css -->
+  <link rel="stylesheet" href="hipchat-client.css" type="text/css"/>
+  <link rel="stylesheet" href="libs/libs.min.css" media="all">
+  <!-- endbuild -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link rel="icon" type="image/png" href="./assets/img/favicon-32x32.png">
+</head>
+
+<body data-init-state='{"auth_method": "nonce"}' data-feature-flags="{}">
+<svg display="none" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="icon-available-selected" viewBox="0 0 1024 1024">
+      <title>available-selected</title>
+      <path class="path1" d="M896 512c0 212.077-171.923 384-384 384s-384-171.923-384-384c0-212.077 171.923-384 384-384s384 171.923 384 384z"></path>
+      <path class="path2" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+    </symbol>
+    <symbol id="icon-available" viewBox="0 0 1024 1024">
+      <title>available</title>
+      <path class="path1" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+    </symbol>
+    <symbol id="icon-dot" viewBox="0 0 1024 1024">
+      <title>separator</title>
+      <path class="path1" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+    </symbol>
+    <symbol id="icon-away-selected" viewBox="0 0 1024 1024">
+      <title>away-selected</title>
+      <path class="path1" d="M896 512c0 212.077-171.923 384-384 384s-384-171.923-384-384c0-212.077 171.923-384 384-384s384 171.923 384 384z"></path>
+      <path class="path2" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path3" d="M320 448h384v128h-384v-128z"></path>
+    </symbol>
+    <symbol id="icon-away" viewBox="0 0 1024 1024">
+      <title>away</title>
+      <path class="path1" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path2" d="M320 448h384v128h-384v-128z"></path>
+    </symbol>
+    <symbol id="icon-xa" viewBox="0 0 1024 1024">
+      <title>xa</title>
+      <path class="path1" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path2" d="M320 448h384v128h-384v-128z"></path>
+    </symbol>
+    <symbol id="icon-xa-selected" viewBox="0 0 1024 1024">
+      <title>xa-selected</title>
+      <path class="path1" d="M896 512c0 212.077-171.923 384-384 384s-384-171.923-384-384c0-212.077 171.923-384 384-384s384 171.923 384 384z"></path>
+      <path class="path2" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path3" d="M320 448h384v128h-384v-128z"></path>
+    </symbol>
+    <symbol id="icon-dnd-selected" viewBox="0 0 1024 1024">
+      <title>dnd-selected</title>
+      <path class="path1" d="M896 512c0 212.077-171.923 384-384 384s-384-171.923-384-384c0-212.077 171.923-384 384-384s384 171.923 384 384z"></path>
+      <path class="path2" d="M512 192c-69.12 0-132.736 22.528-185.153 59.968l-0.192-0.192-1.92 1.92c-27.327 19.84-51.264 43.776-71.104 71.104l-1.92 1.92 0.192 0.192c-37.376 52.352-59.904 115.968-59.904 185.088 0 176.448 143.552 320 320 320s320-143.552 320-320c0-176.448-143.552-320-320-320v0zM592 672l-240-240 80-80 240 240-80 80z"></path>
+    </symbol>
+    <symbol id="icon-dnd" viewBox="0 0 1024 1024">
+      <title>dnd</title>
+      <path class="path1" d="M512 192c-69.12 0-132.736 22.528-185.153 59.968l-0.192-0.192-1.92 1.92c-27.327 19.84-51.264 43.776-71.104 71.104l-1.92 1.92 0.192 0.192c-37.376 52.352-59.904 115.968-59.904 185.088 0 176.448 143.552 320 320 320s320-143.552 320-320c0-176.448-143.552-320-320-320v0zM592 672l-240-240 80-80 240 240-80 80z"></path>
+    </symbol>
+    <symbol id="icon-mobile-selected" viewBox="0 0 1024 1024">
+      <title>mobile-selected</title>
+      <path class="path1" d="M288 64h448c53.019 0 96 42.981 96 96v704c0 53.019-42.981 96-96 96h-448c-53.019 0-96-42.981-96-96v-704c0-53.019 42.981-96 96-96z"></path>
+      <path class="path2" d="M308.8 128h406.4c29.161 0 52.8 23.639 52.8 52.8v662.4c0 29.161-23.639 52.8-52.8 52.8h-406.4c-29.161 0-52.8-23.639-52.8-52.8v-662.4c0-29.161 23.639-52.8 52.8-52.8z"></path>
+      <path class="path3" d="M320 256h384v448h-384v-448z"></path>
+    </symbol>
+    <symbol id="icon-mobile" viewBox="0 0 1024 1024">
+      <title>mobile</title>
+      <path class="path1" d="M308.8 128h406.4c29.161 0 52.8 23.639 52.8 52.8v662.4c0 29.161-23.639 52.8-52.8 52.8h-406.4c-29.161 0-52.8-23.639-52.8-52.8v-662.4c0-29.161 23.639-52.8 52.8-52.8z"></path>
+      <path class="path2" d="M320 256h384v448h-384v-448z"></path>
+    </symbol>
+    <symbol id="icon-unavailable-selected" viewBox="0 0 1024 1024">
+      <title>unavailable-selected</title>
+      <path class="path1" d="M896 512c0 212.077-171.923 384-384 384s-384-171.923-384-384c0-212.077 171.923-384 384-384s384 171.923 384 384z"></path>
+      <path class="path2" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path3" d="M736 512c0 123.712-100.288 224-224 224s-224-100.288-224-224c0-123.712 100.288-224 224-224s224 100.288 224 224z"></path>
+    </symbol>
+    <symbol id="icon-unavailable" viewBox="0 0 1024 1024">
+      <title>unavailable</title>
+      <path class="path1" d="M832 512c0 176.731-143.269 320-320 320s-320-143.269-320-320c0-176.731 143.269-320 320-320s320 143.269 320 320z"></path>
+      <path class="path2" d="M736 512c0 123.712-100.288 224-224 224s-224-100.288-224-224c0-123.712 100.288-224 224-224s224 100.288 224 224z"></path>
+    </symbol>
+  </defs>
+</svg>
+<div id="hipchat"></div>
+<script>
+  window.resolution = ("devicePixelRatio" in window ? devicePixelRatio : 1);
+  window.assetBaseUri = "./";
+</script>
+<script src="libs/libs.min.js"></script>
+<script src="app.js"></script>
+<script src="vendor/prettify/prettify.js"></script>
+</body>
+</html>

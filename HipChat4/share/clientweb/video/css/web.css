@@ -1,0 +1,179 @@
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+@font-face {
+  font-family: "HipChat Icons";
+  src: url(assets/fonts/hipchat.eot);
+  src: url(assets/fonts/hipchat.eot?#iefix) format("embedded-opentype"), url(assets/fonts/hipchat.woff) format("woff"), url(assets/fonts/hipchat.ttf) format("truetype"), url(assets/fonts/hipchat.svg#hipchat) format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+.hipchat-icon-large,
+.hipchat-icon-small,
+.hipchat-icon-xsmall {
+  line-height: 0;
+  position: relative;
+  vertical-align: text-top;
+}
+.hipchat-icon-xsmall {
+  height: 13px;
+  width: 13px;
+}
+.hipchat-icon-small {
+  height: 16px;
+  width: 16px;
+}
+.hipchat-icon-large {
+  height: 32px;
+  width: 32px;
+}
+.hipchat-icon-huge {
+  height: 48px;
+  width: 48px;
+}
+.hipchat-icon-large:after,
+.hipchat-icon-xsmall:after,
+.hipchat-icon-small:after,
+.hipchat-icon-large:before,
+.hipchat-icon-huge:before,
+.hipchat-icon-huge:after,
+.hipchat-icon-small:before,
+.hipchat-icon-xsmall:before {
+  color: inherit;
+  font-family: "HipChat Icons";
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  left: 0;
+  line-height: 1;
+  position: absolute;
+  text-indent: 0;
+  speak: none;
+  top: 50%;
+}
+.hipchat-icon-small:after {
+  font-size: 16px;
+  margin-top: -8px;
+}
+.hipchat-icon-xsmall:after {
+  font-size: 13px;
+  margin-top: -6px;
+}
+.hipchat-icon-large:after {
+  font-size: 32px;
+  margin-top: -16px;
+}
+.hipchat-icon-large:after {
+  font-size: 48px;
+  margin-top: -24px;
+}
+.icon-attachment:after {
+  content: "\e618";
+}
+.icon-emoticon:after {
+  content: "\e61a";
+}
+.icon-search:after {
+  content: "\e61b";
+}
+.icon-audio-no-slash:after {
+  content: "\e600";
+}
+.icon-audio:after {
+  content: "\e601";
+}
+.icon-chat:after,
+.icon-available:after,
+.icon-mention:after,
+.icon-unread:after,
+.icon-dot:after {
+  content: "\e602";
+}
+.icon-away:after {
+  content: "\e603";
+}
+.icon-dnd:after {
+  content: "\e604";
+}
+.icon-file:after {
+  content: "\e605";
+}
+.icon-full-screen:after {
+  content: "\e606";
+}
+.icon-link:after {
+  content: "\e607";
+}
+.icon-lobby:after {
+  content: "\e608";
+}
+.icon-lock:after {
+  content: "\e609";
+}
+.icon-mobile:after {
+  content: "\e60a";
+}
+.icon-phone-hang-up:after {
+  content: "\e60b";
+}
+.icon-phone:after {
+  content: "\e60c";
+}
+.icon-private:after,
+.icon-secret:after {
+  content: "\e60d";
+}
+.icon-public:after {
+  content: "\e60e";
+}
+.icon-settings:after {
+  content: "\e60f";
+}
+.icon-share:after {
+  content: "\e610";
+}
+.icon-signout:after {
+  content: "\e611";
+}
+.icon-status:after {
+  content: "\e612";
+}
+.icon-turn-camera:after {
+  content: "\e613";
+}
+.icon-unknown:after {
+  content: "\e614";
+}
+.icon-user:after {
+  content: "\e615";
+}
+.icon-video-no-slash:after {
+  content: "\e616";
+}
+.icon-video:after {
+  content: "\e617";
+}
+.icon-chat,
+.icon-available {
+  color: #8fca1c !important;
+}
+.icon-away {
+  color: #f1a257 !important;
+}
+.icon-dnd {
+  color: #d04437 !important;
+}
+.icon-unread {
+  color: #cccccc !important;
+}
+.icon-mention {
+  color: #3f5871 !important;
+}
+
+/* Native Views */
+
+body.native #content > .aui-page-header {
+  padding: 10px;
+}

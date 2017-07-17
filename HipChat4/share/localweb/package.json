@@ -1,0 +1,10 @@
+{
+  "name": "@atlassian/webcore-native",
+  "version": "4.29.4",
+  "description": "Pre-compiled webcore assets for native",
+  "main": "app.js",
+  "author": "HipChat <hipchat@atlassian.com>",
+  "publishConfig": {
+    "registry": "https://npm-private.atlassian.io"
+  }
+}

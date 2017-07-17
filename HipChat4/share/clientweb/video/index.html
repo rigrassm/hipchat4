@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>HipChat</title>
+    <meta name="title" content="HipChat">
+    <script src="js/vendor/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vendor/jquery/jquery-migrate-1.2.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="css/vendor/aui/5.7.1/css/aui.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/vendor/aui/5.7.1/css/aui-experimental.min.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/web.css">
+    <link rel="stylesheet" type="text/css" href="css/hc_adg.css">
+    <link rel="stylesheet" type="text/css" href="css/avatars.css">
+    <link rel="stylesheet" type="text/css" href="css/ngvideo.css">
+    <link rel="stylesheet" type="text/css" href="css/desktop.css">
+    <script type="text/x-template" title="inline-edit-form">
+      <form class="aui inline-edit" action="{action}" method="{method}">
+        {hidden}
+        {fields}
+        {buttons}
+      </form>
+    </script>
+    <script type="text/x-template" title="inline-edit-form-text">
+      <input type="{type}" class="text {classes}" name="{name}" value="{value}"/>
+    </script>
+    <script type="text/x-template" title="inline-edit-form-submit">
+      <button class="aui-button aui-button-primary save">Save</button>
+      <a href="#" class="aui-button aui-button-link cancel">Cancel</a>
+    </script>
+    <style>
+      #aui-responsive-header-dropdown-trigger-0 {
+        display:none;
+      }
+    </style>
+  </head>
+  <body ng-app="hcVideoApp" ng-controller="VideoCtrl" ng-keydown="keydown($event)" ng-keyup="keyup($event)" ng-resize="resize()">
+  <div main></div>
+  <script>
+    var context = {
+      id: /[?&]user_id=(\d+)(?:&|$)/.exec(window.location.search)[1],
+      app_id: /[?&]app_id=(\d+)(?:&|$)/.exec(window.location.search)[1],
+      width: 960,
+      height: 540
+    };
+  </script>
+  <script src="js/vendor/addlive-sdk.min.js"></script>
+  <script src="js/vendor/almond-min.js"></script>
+  <script src="js/vendor/aui/5.7.1/js/aui.min.js"></script>
+  <script src="js/vendor/aui/5.7.1/js/aui-soy.min.js"></script>
+  <script src="js/vendor/aui/5.7.1/js/aui-experimental.min.js"></script>
+  <script src="js/default.js"></script>
+  <script src="js/avatar_helpers.js"></script>
+  <script src="js/ngvideo.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $(document).trigger('hipchat.load');
+    });
+  </script>
+</html>
